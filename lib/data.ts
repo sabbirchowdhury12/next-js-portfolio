@@ -2,6 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+import { TbLocationFilled } from "react-icons/tb";
+import { BsCalendar3EventFill } from "react-icons/bs";
+import { GrFlagFill } from "react-icons/gr";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
@@ -30,6 +33,24 @@ export const links = [
   {
     name: "Contact",
     hash: "#contact",
+  },
+] as const;
+
+export const aboutCards = [
+  {
+    icon: React.createElement(GrFlagFill),
+    title: "Nationality",
+    describe: "Bangladeshi",
+  },
+  {
+    icon: React.createElement(TbLocationFilled),
+    title: "Address",
+    describe: "Manikganj, Dhaka",
+  },
+  {
+    icon: React.createElement(BsCalendar3EventFill),
+    title: "Support",
+    describe: "24/7 -- online",
   },
 ] as const;
 

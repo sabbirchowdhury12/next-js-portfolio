@@ -93,6 +93,32 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "rmtDev",
+    description:
+      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+    imageUrl:
+      "https://images.unsplash.com/photo-1717684566059-4d16b456c72a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8",
+  },
+  {
+    title: "CorpComment",
+    description:
+      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
+    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+    imageUrl:
+      "https://images.unsplash.com/photo-1717684566059-4d16b456c72a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8",
+  },
+
+  {
+    title: "Word Analytics",
+    description:
+      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    imageUrl: wordanalyticsImg,
+  },
+] as const;
+export const reactProjectsData = [
+  {
     title: "CorpComment",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
@@ -114,6 +140,11 @@ export const projectsData = [
     imageUrl: wordanalyticsImg,
   },
 ] as const;
+
+export const generateProjectData = (name: string) => {
+  if (name == "react") return reactProjectsData;
+  if (name == "mern") return projectsData;
+};
 
 export const skillsData = [
   "HTML",

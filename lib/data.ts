@@ -1,10 +1,12 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaFacebookMessenger } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import { TbLocationFilled } from "react-icons/tb";
 import { BsCalendar3EventFill } from "react-icons/bs";
 import { GrFlagFill } from "react-icons/gr";
+import { MdEmail } from "react-icons/md";
+import { FaSquareWhatsapp } from "react-icons/fa6";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
@@ -56,24 +58,32 @@ export const aboutCards = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Web Development Course",
+    location: "Programming Hero",
     description:
       "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    icon: React.createElement(CgWorkAlt),
+    date: "2022 - 2023",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Development Course Level 2",
+    location: "Programming Hero",
     description:
       "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2023 - 2024",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "BSS (Hons)",
+    location: "Govt. Debendro College",
+    description:
+      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2019 - present",
+  },
+  {
+    title: "Youtube - Online Course",
+    location: "Online",
     description:
       "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
     icon: React.createElement(FaReact),
@@ -125,4 +135,22 @@ export const skillsData = [
   "Python",
   "Django",
   "Framer Motion",
+] as const;
+
+export const contactCards = [
+  {
+    icon: React.createElement(MdEmail),
+    title: "Email",
+    describe: "sabbirchowdhury40854@gmail.com",
+  },
+  {
+    icon: React.createElement(FaSquareWhatsapp),
+    title: "Whatsapp",
+    describe: "+8801989969238",
+  },
+  {
+    icon: React.createElement(FaFacebookMessenger),
+    title: "Messenger",
+    describe: "Sabbir Chowdhury",
+  },
 ] as const;

@@ -30,7 +30,7 @@ export default function RootLayout({
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
-            {children}
+            <div className="max-w-5xl mx-auto">{children}</div>
             <Footer />
 
             <Toaster position="top-right" />

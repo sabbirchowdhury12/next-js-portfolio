@@ -7,6 +7,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
+import { aboutCards, contactCards } from "@/lib/data";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -15,7 +16,7 @@ export default function Contact() {
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+      className="mb-20 sm:mb-28  text-center w-full "
       initial={{
         opacity: 0,
       }}
@@ -29,16 +30,26 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading title="GET in touch" sub_title="contact me" />
 
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
-          example@gmail.com
-        </a>{" "}
-        or through this form.
-      </p>
-
+      <div className="flex flex-wrap w-full justify-between gap-4  mb-5">
+        {contactCards.map((card) => {
+          return (
+            <div
+              key={card?.title}
+              className=" flex flex-col p-4 shadow border flex-1 rounded-lg"
+            >
+              <p className="text-center flex items-center justify-center text-xl">
+                {card?.icon}
+              </p>
+              <p className="mt-2 ">{card?.title}</p>
+              <p className="text-gray-500 dark:text-gray-300">
+                {card?.describe}
+              </p>
+            </div>
+          );
+        })}
+      </div>
       <form
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
@@ -72,3 +83,9 @@ export default function Contact() {
     </motion.section>
   );
 }
+
+// {
+//   <a className="underline" href="mailto:example@gmail.com">
+//           sabbirchowdhury40854@gmail.com
+//         </a>{" "}
+//         or through this form.

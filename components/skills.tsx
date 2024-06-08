@@ -27,26 +27,51 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+      className="mb-28  mx-auto scroll-mt-28 text-center sm:mb-40"
     >
-      <SectionHeading>My skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
-            key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}
-          >
-            {skill}
-          </motion.li>
-        ))}
-      </ul>
+      <SectionHeading title="skills" sub_title="technical" />
+      <div className="flex justify-between items-center flex-col md:flex-row  gap-4 w-full">
+        <ul className="grid c w-full grid-cols-2  sm:grid-cols-3 lg:grid-cols-4  shadow border  p-4 rounded  gap-2   text-gray-800 ">
+          <h1 className="col-span-2 my-2 font-bold dark:text-white/80">
+            Frontend Technology
+          </h1>
+          {skillsData.map((skill, index) => (
+            <motion.li
+              className="bg-white borderBlack rounded-xl p-3 dark:bg-white/10 dark:text-white/80"
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={index}
+            >
+              {skill}
+            </motion.li>
+          ))}
+        </ul>
+        <ul className="grid w-full grid-cols-2  sm:grid-cols-3 lg:grid-cols-4 justify-center shadow border  p-4 rounded items-center gap-2  text-gray-800">
+          <h1 className="col-span-2 my-2 font-bold dark:text-white/80">
+            Backend Technology
+          </h1>
+          {skillsData.map((skill, index) => (
+            <motion.li
+              className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={index}
+            >
+              {skill}
+            </motion.li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

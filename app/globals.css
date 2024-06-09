@@ -41,6 +41,10 @@ html.dark {
 } */
 .projects_img:hover img {
   object-fit: cover;
-  transform: translateY(calc(100% - 400px));
-  transition: 3s ease-out;
+  transform: translateY(calc(-100% + 400px));
+  transition: 5s ease-out;
+}
+
+.icon {
+  @apply bg-white  text-gray-700 w-14 h-14 hover:text-gray-950 flex items-center justify-center  gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white;
 }

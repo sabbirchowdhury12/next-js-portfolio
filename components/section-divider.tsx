@@ -2,15 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { HiDownload } from "react-icons/hi";
-import { BsArrowBarDown } from "react-icons/bs";
 import { CgArrowDown } from "react-icons/cg";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import Link from "next/link";
 
 export default function SectionDivider() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  console.log("hi");
   return (
     <Link
       href="#about"

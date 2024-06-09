@@ -13,16 +13,11 @@ import {
 } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { FaFacebookF } from "react-icons/fa6";
 
 const social = (
   <div className="flex md:flex-col  gap-4">
     {" "}
-    <a
-      className="bg-white  text-gray-700 w-14 h-14 hover:text-gray-950 flex items-center justify-center  gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white"
-      href="https://linkedin.com"
-      target="_blank"
-    >
+    <a className="icon" href="https://linkedin.com" target="_blank">
       <BsLinkedin />
     </a>
     <a
@@ -33,7 +28,7 @@ const social = (
       <FaGithubSquare />
     </a>
     <a
-      className="bg-white  text-gray-700 w-14 h-14 hover:text-gray-950 flex items-center justify-center  gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white"
+      className="icon"
       target="_blank"
       href="https://www.facebook.com/profile.php?id=100075403486886"
     >

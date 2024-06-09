@@ -11,10 +11,10 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div>
-      <h2 className="text-3xl  font-bold uppercase mb-2  text-center">
+      <h2 className="text-xl md:text-3xl font-bold uppercase mb-2  text-center tracking-wider">
         {title}
       </h2>
-      <h2 className="text-lg text-gray-500 dark:text-gray-200 font-bold uppercase mb-8 text-center">
+      <h2 className="text-sm text-gray-500 dark:text-gray-200 font-bold uppercase mb-8 text-center tracking-wider">
         {sub_title}
       </h2>
     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
@@ -8,9 +8,11 @@ import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import { aboutCards, contactCards } from "@/lib/data";
+import { BsArrowRight } from "react-icons/bs";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const formRef = useRef(null);
 
   return (
     <motion.section
@@ -43,7 +45,7 @@ export default function Contact() {
                 {card?.icon}
               </p>
               <p className="mt-2 ">{card?.title}</p>
-              <p className="text-gray-500 dark:text-gray-300">
+              <p className="text-gray-500 dark:text-gray-300 mb-4">
                 {card?.describe}
               </p>
             </div>
@@ -51,6 +53,7 @@ export default function Contact() {
         })}
       </div>
       <form
+        ref={formRef}
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);

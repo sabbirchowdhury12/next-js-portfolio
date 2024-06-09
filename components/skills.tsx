@@ -2,7 +2,7 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { skillsData } from "@/lib/data";
+import { backendSkillsData, frontendSkillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 
@@ -27,15 +27,15 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="mb-28  mx-auto scroll-mt-28 text-center sm:mb-40"
+      className="mb-28  mx-auto scroll-mt-28 text-center sm:mb-40 uppercase"
     >
-      <SectionHeading title="skills" sub_title="technical" />
-      <div className="flex justify-between items-center flex-col md:flex-row  gap-4 w-full">
-        <ul className="grid c w-full grid-cols-2  sm:grid-cols-3 lg:grid-cols-4  shadow border  p-4 rounded  gap-2   text-gray-800 ">
-          <h1 className="col-span-2 my-2 font-bold dark:text-white/80">
+      <SectionHeading title="skills" sub_title="MY TECHNICAL SKILLS " />
+      <div className="flex justify-between items-center flex-col  gap-4 w-full">
+        <ul className="flex flex-wrap items-center justify-center  shadow border  p-4 rounded  gap-2   text-gray-800 ">
+          <h1 className="flex-1 basis-96 my-2 font-bold dark:text-white/80">
             Frontend Technology
           </h1>
-          {skillsData.map((skill, index) => (
+          {frontendSkillsData.map((skill, index) => (
             <motion.li
               className="bg-white borderBlack rounded-xl p-3 dark:bg-white/10 dark:text-white/80"
               key={index}
@@ -51,11 +51,11 @@ export default function Skills() {
             </motion.li>
           ))}
         </ul>
-        <ul className="grid w-full grid-cols-2  sm:grid-cols-3 lg:grid-cols-4 justify-center shadow border  p-4 rounded items-center gap-2  text-gray-800">
-          <h1 className="col-span-2 my-2 font-bold dark:text-white/80">
+        <ul className="flex flex-wrap items-center justify-center shadow border  p-4 rounded  gap-2  text-gray-800">
+          <h1 className="flex-1 basis-96 my-2 font-bold dark:text-white/80">
             Backend Technology
           </h1>
-          {skillsData.map((skill, index) => (
+          {backendSkillsData.map((skill, index) => (
             <motion.li
               className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
               key={index}

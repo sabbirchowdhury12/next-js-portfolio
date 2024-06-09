@@ -6,68 +6,55 @@ import { generateProjectData, projectsData } from "@/lib/data";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
 import Image, { StaticImageData } from "next/image";
-import { BsGithub } from "react-icons/bs";
+import { BsBoxArrowUpRight, BsGithub } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 
+const projectBtn = [
+  { name: "Full-Stack", value: "full-stack" },
+  { name: "Font-end", value: "Font-end" },
+  { name: "Javascript", value: "javascript" },
+  { name: "Css", value: "css" },
+];
+
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState("react");
+  const [selectedProject, setSelectedProject] = useState("full-stack");
+  const [selectedbtn, setSelectedbtn] = useState("full-stack");
   const { ref } = useSectionInView("Projects", 0.5);
 
   const data: any = generateProjectData(selectedProject);
-  console.log(selectedProject, data);
+
+  const handleProject = (value: string) => {
+    setSelectedProject(value);
+    setSelectedbtn(value);
+  };
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
       <SectionHeading title="My Projects" sub_title="" />
-      <button ref={ref} className="" onClick={() => setSelectedProject("mern")}>
-        Mearn
-      </button>
-      <button
-        ref={ref}
-        className=""
-        onClick={() => setSelectedProject("react")}
-      >
-        react
-      </button>
-      <div className="grid grid-cols-2 gap-4">
+      <ul className="flex  justify-center flex-wrap items-center gap-4">
+        {projectBtn.map((btn) => {
+          return (
+            <div
+              key={btn.value}
+              onClick={() => handleProject(btn.value)}
+              className={` borderBlack rounded-xl px-5 py-3  mb-10 cursor-pointer ${
+                btn.value === selectedbtn
+                  ? "bg-gray-500 text-white dark:bg-white dark:text-black"
+                  : "bg-white dark:text-white/80 dark:bg-white/10 "
+              }`}
+            >
+              {btn.name}
+            </div>
+          );
+        })}
+      </ul>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {data?.map((project: any) => {
           return (
-            <div key={project?.title} className="shadow p-4 rounded-lg border">
-              <p className="text-2xl text-center">{project.title}</p>
-              <div className="projects_img  w-full h-[250px] overflow-hidden cursor-pointer">
-                <Image
-                  src={project.imageUrl}
-                  alt="fdsaf"
-                  height={500}
-                  width={500}
-                  className="object-cover w-full transition-transform ease-out duration-[5000ms] rounded-[1rem]"
-                />
-              </div>
-              <p className="my-4 text-center">{project.title}</p>
-              <div className="flex justify-center items-center gap-4">
-                <a
-                  className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-                  href="https://github.com"
-                  target="_blank"
-                >
-                  <FaGithubSquare />
-                </a>
-                <a
-                  className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-                  href="https://github.com"
-                  target="_blank"
-                >
-                  <FaGithubSquare />
-                </a>
-                <a
-                  className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-                  href="https://github.com"
-                  target="_blank"
-                >
-                  <FaGithubSquare />
-                </a>
-              </div>
-            </div>
+            <React.Fragment key={project.id}>
+              <Project project={project} />
+            </React.Fragment>
           );
         })}
       </div>

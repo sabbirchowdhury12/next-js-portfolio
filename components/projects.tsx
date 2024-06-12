@@ -31,7 +31,7 @@ export default function Projects() {
   return (
     <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
       <SectionHeading title="My Projects" sub_title="" />
-      <ul className="flex  justify-center flex-wrap items-center gap-4">
+      {/* <ul className="flex  justify-center flex-wrap items-center gap-4">
         {projectBtn.map((btn) => {
           return (
             <div
@@ -47,7 +47,7 @@ export default function Projects() {
             </div>
           );
         })}
-      </ul>
+      </ul> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {data?.map((project: any) => {

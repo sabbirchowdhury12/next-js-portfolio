@@ -7,8 +7,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
-import { aboutCards, contactCards } from "@/lib/data";
-import { BsArrowRight } from "react-icons/bs";
+import { contactCards } from "@/lib/data";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -33,7 +32,6 @@ export default function Contact() {
       }}
     >
       <SectionHeading title="GET in touch" sub_title="contact me" />
-
       <div className="flex flex-wrap w-full justify-between gap-4  mb-5">
         {contactCards.map((card) => {
           return (

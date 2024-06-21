@@ -1,13 +1,12 @@
 "use client";
 
 import { useRef } from "react";
-import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaGithubSquare } from "react-icons/fa";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 
-type ProjectProps = (typeof projectsData)[number];
+// type ProjectProps = (typeof projectsData)[number];
 
 export default function Project({ project }: any) {
   const ref = useRef<HTMLDivElement>(null);

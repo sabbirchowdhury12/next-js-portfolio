@@ -17,7 +17,11 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 const social = (
   <div className="flex md:flex-col  gap-4">
     {" "}
-    <a className="icon" href="https://linkedin.com" target="_blank">
+    <a
+      className="icon"
+      href="https://www.linkedin.com/in/sabbir-chowdhury12"
+      target="_blank"
+    >
       <BsLinkedin />
     </a>
     <a

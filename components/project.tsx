@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaGithubSquare } from "react-icons/fa";
 import { BsBoxArrowUpRight } from "react-icons/bs";
+import Link from "next/link";
+import { MdDashboard } from "react-icons/md";
 
 // type ProjectProps = (typeof projectsData)[number];
 
@@ -28,7 +30,7 @@ export default function Project({ project }: any) {
     >
       <div
         key={project?.title}
-        className="shadow p-4 rounded-lg dark:bg-[#1D2432]"
+        className="shadow-lg p-4 rounded-lg dark:bg-[#1D2432]"
       >
         <p className="text-sm md:text-2xl  text-center my-2 font-bold">
           {project.title}
@@ -63,6 +65,17 @@ export default function Project({ project }: any) {
           <a className="icon" href={project.live} target="_blank">
             <BsBoxArrowUpRight />
           </a>
+
+          {project?.dashboard && (
+            <a
+              target="_blank"
+              title="admin account"
+              href={project?.dashboard?.link}
+              className="icon"
+            >
+              <MdDashboard />
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

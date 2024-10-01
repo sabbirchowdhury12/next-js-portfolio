@@ -5,14 +5,11 @@ import SectionHeading from "./section-heading";
 import { generateProjectData } from "@/lib/data";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
-import Image, { StaticImageData } from "next/image";
-import { BsBoxArrowUpRight, BsGithub } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
 
 const projectBtn = [
   { name: "Full-Stack", value: "full-stack" },
   // { name: "Font-end", value: "Font-end" },
-  // { name: "Javascript", value: "javascript" },
+  { name: "Javascript", value: "javascript" },
   { name: "Css", value: "css" },
 ];
 
